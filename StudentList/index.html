@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Student System</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="App/main.js"></script>
+    <style>
+        table, th, tr, td{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="app" ng-controller="main">
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            <tr ng-repeat="x in studentList">
+                <td>{{x.ID}}</td>
+                <td>{{x.FirstName}}</td>
+                <td>{{x.LastName}}</td>
+            </tr>
+        </table>
+        <br /><br />
+        Student ID <input ng-model="newStudent.ID" /><br />
+        First Name <input ng-model="newStudent.FirstName" /><br />
+        Last Name <input ng-model="newStudent.LastName" /><br />
+        <button ng-click="add()">Add</button>
+    </div>
+</body>
+</html>
